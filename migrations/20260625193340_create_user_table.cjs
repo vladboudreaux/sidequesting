@@ -10,6 +10,7 @@ exports.up = function (knex) {
         table.string('email')
         table.string('password')
         table.date('birth_date')
+        table.boolean('is_admin')
     })
 };
 

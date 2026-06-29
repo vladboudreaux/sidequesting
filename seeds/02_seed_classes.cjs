@@ -20,6 +20,6 @@ function createClass(rows) {
 
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
-  await knex('classes').del()
+  // await knex('classes').del()
   await knex('classes').insert(createClass(8));
 };

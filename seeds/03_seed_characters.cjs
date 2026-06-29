@@ -8,10 +8,13 @@ const { faker } = require('@faker-js/faker')
 
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
-  await knex('characters').del()
+  // await knex('characters').del()
 
   const users = await knex('users').select('user_id')
   const classes = await knex('classes').select('class_id')
+
+  console.log('users:', users)
+  console.log('classes:', classes)
 
   function createCharacter(rows) {
     let characterData = []
@@ -31,5 +34,7 @@ exports.seed = async function (knex) {
     return characterData
   }
 
-  await knex('characters').insert(createCharacter(50));
+  const characters = createCharacter(50)
+  console.log('characters:', characters[0])
+  await knex('characters').insert(characters);
 };

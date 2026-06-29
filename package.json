@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "db-reset": "knex migrate:rollback --all && knex migrate:latest && knex seed:run",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

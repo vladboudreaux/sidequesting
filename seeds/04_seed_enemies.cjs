@@ -8,7 +8,7 @@ const { faker } = require('@faker-js/faker')
 
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
-  await knex('characters').del()
+  // await knex('characters').del()
 
   const classes = await knex('classes').select('class_id')
 
