@@ -17,7 +17,9 @@ Simply run `` npm run db-reset ``. It will run the following commands in sequenc
 Faker will do all the leg work for you.
 
 ## Next Steps:
-[ ] Create a login feature. Ideally, only the Administrator should be able to see everybody else's information. I'd like the user to only be able to see the Characters and User Info for themselves.
+[x] Create a login feature. Ideally, only the Administrator should be able to see everybody else's information. I'd like the user to only be able to see the Characters and User Info for themselves.
+
+[ ] Put route made for editing characters. Make sure to actually build the functionality into the page! It's just a route right now.
 
 [ ] I think I'll create a conditionally rendered page for the Admin, so that they can access a terminal window to the Postgres DB using xterm.js. I'll have to do a lot of reading for this one, but it seems feasible based on some googling.
 

@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, Outlet, RouterProvider, Navigate } from 'react-router-dom'
+import { AuthProvider } from './AuthContext'
 import PageHeader from './PageHeader'
 import HomePage from './HomePage'
 import Users from './Users'
@@ -7,6 +8,9 @@ import Characters from './Characters'
 import Enemies from './Enemies'
 import Equipment from './Equipment'
 import Abilities from './Abilities'
+import Login from './Login'
+import Register from './Register'
+import Classes from './Classes'
 import './App.css'
 
 const router = createBrowserRouter([
@@ -37,13 +41,29 @@ const router = createBrowserRouter([
       {
         path: 'abilities',
         element: <Abilities />
+      },
+      {
+        path: 'login',
+        element: <Login />
+      },
+      {
+        path: 'register',
+        element: <Register />
+      },
+      {
+        path: 'classes',
+        element: <Classes />
       }
     ]
   }
 ])
 
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  )
 }
 
 export default App

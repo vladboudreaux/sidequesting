@@ -1,15 +1,20 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import { createBrowserRouter, RouterProvider, Outlet, Link } from 'react-router-dom'
+import { useAuth } from './AuthContext'
 
 function Users() {
+
     const [users, setUsers] = useState([])
+    const { user, logout } = useAuth()
 
     useEffect(() => {
         fetch('http://localhost:3001/users')
             .then(res => res.json())
             .then(userData => setUsers(userData))
     }, [])
+
+    if (!user) return <p> Please log in.</p>
 
     return (
         <div>
